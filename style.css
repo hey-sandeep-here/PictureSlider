@@ -1,0 +1,282 @@
+h1{
+    text-align: center; 
+    text-decoration: underline double; 
+    font-family: cursive; 
+    color: white;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #615b5b;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 80vh;
+    background: #615b5b;
+    box-shadow: 0 30px 50px #dbdbdb;
+    margin: 50px auto;
+}
+
+.container .slide .item{
+    width: 20%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    margin: 2%;
+    padding-top: 10%;
+    width: 50%;
+    height: 80%;
+}
+
+.slide .item:nth-child(3){
+    left: 50%;
+}
+.slide .item:nth-child(4){
+    left: calc(50% + 22%);
+}
+.slide .item:nth-child(5){
+    left: calc(50% + 44%);
+}
+
+/* here n = 0, 1, 2, 3,... */
+.slide .item:nth-child(n + 6){
+    left: calc(50% + 66%);
+    opacity: 0;
+}
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    width: 80%;
+    text-align: left;
+    color: #eee;
+    transform: translate(0, -50%);
+    font-family: system-ui;
+    display: none;
+}
+
+.content button:hover {
+    color: #ffffff; /* White */
+    background-color: #FF8C00; /* Dark orange */
+}
+
+.slide .item:nth-child(2) .content{
+    display: block;
+}
+
+.content .name{
+    font-size: 4vw;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.content .des{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+    font-size: 2vw;
+}
+
+.content button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+    font-size: 2vw;
+}
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+.button{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.button button{
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    transition: 0.3s;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.button button:hover{
+    background: #ababab;
+    color: #ffffff;
+}
+
+.fullscreen-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #4e4949;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+footer h6, footer p, footer h3 {
+    margin-bottom: 10px;
+}
+
+footer .social-icon {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+footer .social-icon img {
+    transition: transform 0.3s ease;
+    width: 40px;
+    height: 40px;
+}
+
+footer .social-icon img:hover {
+    transform: scale(1.1);
+}
+
+/* Add padding to the bottom of the body to prevent content from being hidden behind the footer */
+body {
+    padding-bottom: 150px; /* Adjust this value based on your footer's height */
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        height: 60vh;
+    }
+    
+    .container .slide .item {
+        width: 30%;
+        height: 40%;
+    }
+    
+    .slide .item:nth-child(1),
+    .slide .item:nth-child(2) {
+        width: 70%;
+        height: 70%;
+    }
+    
+    .content .name {
+        font-size: 6vw;
+    }
+    
+    .content .des {
+        font-size: 3vw;
+    }
+    
+    .content button {
+        font-size: 3vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        height: 50vh;
+    }
+    
+    .container .slide .item {
+        width: 40%;
+        height: 30%;
+    }
+    
+    .slide .item:nth-child(1),
+    .slide .item:nth-child(2) {
+        width: 90%;
+        height: 60%;
+    }
+    
+    .content .name {
+        font-size: 8vw;
+    }
+    
+    .content .des {
+        font-size: 4vw;
+    }
+    
+    .content button {
+        font-size: 4vw;
+    }
+}
