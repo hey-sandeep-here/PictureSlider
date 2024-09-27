@@ -4,7 +4,8 @@
 checkOut link Above.... 
 
 I hope you enjoy them!
-For an enhanced experience, please access this site on a desktop.
+
+    For an enhanced experience, please access this site on a desktop.
             
             The mobile version may not be fully responsive.
             
