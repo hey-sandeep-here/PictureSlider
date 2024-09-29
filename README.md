@@ -15,6 +15,7 @@ I hope you enjoy them!
 
 <div align="center">
    <img src="https://content.mangosigns.com/apps/slideshow/logo3.png" width="60%"  alt="Project Logo" />
+  <img src="https://cdn0.iconfinder.com/data/icons/camera-interface-gradient-rise-and-shine/512/Photo_slideshow-512.png" width="60%"  alt="Project Logo" />
     <h1>Image Slider</h1>
 </div>
 
