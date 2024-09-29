@@ -11,7 +11,7 @@ I hope you enjoy them!
 
 *LOGIN TO USE DIRECT TEMPLATES*
 
-## Logo and Title
+##Title
 
 <div align="center">
    <img src="https://content.mangosigns.com/apps/slideshow/logo3.png" width="60%"  alt="Project Logo" />
